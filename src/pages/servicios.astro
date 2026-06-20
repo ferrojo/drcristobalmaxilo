@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const servicios = [
+  {
+    id: 'implantes',
+    icon: 'dentistry',
+    badge: 'Alta Precisión',
+    title: 'Implantes Dentales',
+    desc: 'Recupera tu sonrisa con precisión quirúrgica. Utilizamos tecnología de escaneo 3D para una colocación exacta y duradera.',
+    img: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80',
+  },
+  {
+    id: 'ortognatica',
+    icon: 'face',
+    badge: 'Funcionalidad',
+    title: 'Cirugía Ortognática',
+    desc: 'Corrección funcional y estética de los maxilares para mejorar la mordida, la respiración y la armonía facial.',
+    img: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80',
+  },
+  {
+    id: 'cordales',
+    icon: 'medical_services',
+    badge: 'Postoperatorio Rápido',
+    title: 'Extracción de Cordales',
+    desc: 'Procedimientos seguros y sin dolor mediante técnicas mínimamente invasivas para una recuperación confortable.',
+    img: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80',
+  },
+  {
+    id: 'patologia',
+    icon: 'biotech',
+    badge: 'Diagnóstico Experto',
+    title: 'Patología Bucal',
+    desc: 'Diagnóstico y tratamiento de lesiones en la cavidad oral, quistes y tumores maxilofaciales con rigor clínico.',
+    img: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80',
+  },
+];
+---
+
+<Layout title="Servicios" currentPage="/servicios">
+
+  <!-- Header -->
+  <section class="pt-40 pb-16 px-6 bg-surface-container-low text-center">
+    <div class="max-w-container mx-auto space-y-4">
+      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Excelencia Quirúrgica</span>
+      <h1 class="font-h1 text-h1 text-primary">Nuestros Servicios</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Especialistas en procedimientos avanzados de cirugía bucal y maxilofacial, combinando tecnología de vanguardia con un enfoque humano.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      {servicios.map(s => (
+        <div id={s.id} class="bg-surface-container-low rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-[0px_4px_20px_rgba(26,82,118,0.08)] transition-shadow group">
+          <div class="h-48 overflow-hidden">
+            <img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-white">{s.icon}</span>
+              </div>
+              <span class="font-label-caps text-label-caps text-white uppercase tracking-widest bg-secondary-container px-2 py-1 rounded">
+                {s.badge}
+              </span>
+            </div>
+            <h3 class="font-h3 text-h3 text-primary mb-3">{s.title}</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-5">{s.desc}</p>
+            <a href="/agendar" class="inline-flex items-center gap-1 text-primary font-semibold text-sm hover:gap-2 transition-all">
+              Leer más <span>→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Resultados Clínicos -->
+  <section class="py-20 px-6 bg-surface-container-low">
+    <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="space-y-6">
+        <h2 class="font-h2 text-h2 text-primary">Resultados Clínicos Reales</h2>
+        <p class="text-on-surface-variant leading-relaxed">
+          Nuestros casos demuestran la transformación funcional y estética que la cirugía maxilofacial experta puede lograr. Cada tratamiento es personalizado.
+        </p>
+        <ul class="space-y-3">
+          {['Planificación Digital 3D', 'Mínimamente Invasivo', 'Seguimiento Postoperatorio'].map(item => (
+            <li class="flex items-center gap-3 text-on-surface">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <a
+          href="/agendar"
+          class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-xl font-cta text-cta hover:bg-primary hover:text-white transition-all"
+        >
+          Ver Galería Completa
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80"
+          alt="Tecnología 3D dental"
+          class="rounded-xl w-full h-48 object-cover"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80"
+          alt="Cirujano revisando radiografía"
+          class="rounded-xl w-full h-48 object-cover grayscale"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Aseguradoras -->
+  <section class="py-16 px-6 bg-white border-y border-outline-variant/30">
+    <div class="max-w-container mx-auto text-center space-y-8">
+      <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+        Con el Respaldo de las Mejores Aseguradoras
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-12 opacity-50">
+        {['AXA Health', 'MetLife', 'GNP Seguros', 'MAPFRE', 'Allianz'].map(name => (
+          <span class="text-slate-500 font-bold text-base tracking-wider hover:opacity-100 transition-opacity cursor-default">
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 px-6 bg-primary text-center">
+    <div class="max-w-container mx-auto space-y-6">
+      <h2 class="font-h2 text-h2 text-white">¿Listo para transformar tu calidad de vida?</h2>
+      <p class="text-primary-fixed-dim max-w-xl mx-auto">
+        Solicita una valoración integral y descubre cómo la cirugía maxilofacial puede ayudarte.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/agendar"
+          class="bg-white text-primary px-8 py-4 rounded-xl font-cta text-cta hover:bg-primary-fixed transition-all"
+        >
+          Agendar Cita Ahora
+        </a>
+        <a
+          href="https://wa.me/521XXXXXXXXXX"
+          target="_blank"
+          class="whatsapp-green whatsapp-hover text-white px-8 py-4 rounded-xl font-cta text-cta flex items-center justify-center gap-2 transition-all"
+        >
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

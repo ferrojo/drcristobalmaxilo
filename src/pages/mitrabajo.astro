@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Mi Trabajo" currentPage="/mitrabajo">
+
+  <section class="pt-32 pb-20 px-6 bg-gradient-to-br from-surface to-surface-container-low">
+    <div class="max-w-container mx-auto space-y-12">
+      
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Casos Clínicos</span>
+        <h1 class="font-h1 text-h1 text-primary leading-tight">Resultados que Transforman Vidas</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Casos reales de alta complejidad resueltos con precisión quirúrgica, tecnología de vanguardia y un enfoque centrado en el paciente.
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-3 bg-surface-container rounded-xl p-2 shadow-sm border border-outline-variant/30 max-w-4xl mx-auto">
+        <button class="filter-btn active font-semibold text-primary-fixed px-6 py-2 rounded-lg">Todos</button>
+        <button class="filter-btn text-on-surface-variant px-6 py-2 rounded-lg hover:bg-surface-container-high">Cirugía Ortognática</button>
+        <button class="filter-btn text-on-surface-variant px-6 py-2 rounded-lg hover:bg-surface-container-high">Implantes</button>
+        <button class="filter-btn text-on-surface-variant px-6 py-2 rounded-lg hover:bg-surface-container-high">Traumatología</button>
+        <button class="filter-btn text-on-surface-variant px-6 py-2 rounded-lg hover:bg-surface-container-high">Patología</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { category: 'ortognatica', label: 'Transformación Facial', subtitle: 'Antes y Después', img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80', duration: '6 Meses' },
+          {
+            category: 'implantes',
+            label: 'Rehabilitación Completa',
+            subtitle: 'Caso Clínico',
+            img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&q=80',
+            duration: '4 Meses',
+            isLong: true
+          },
+          { category: 'traumatologia', label: 'Reconstrucción Facial', subtitle: 'Trauma Mandibular', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80', duration: '3 Semanas' },
+          { category: 'patologia', label: 'Extracción Dental', subtitle: 'Cordales Incluídos', img: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80', duration: '1 Hora' },
+          { category: 'implantes', label: 'Reemplazo de Molares', subtitle: 'Restauración Posterior', img: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=600&q=80', duration: '2 Sesiones' },
+          { category: 'ortognatica', label: 'Mejora Funcional', subtitle: 'Perfil Facial', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80', duration: '2 Horas' },
+        ].map((item, index) => (
+          <div class={`card-wrapper ${item.isLong ? 'md:col-span-2' : ''}`} data-category={item.category}>
+            <div class="group relative rounded-xl overflow-hidden cursor-pointer shadow-lg">
+              <img src={item.img} alt={item.label} class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
+              <!-- Top Badge -->
+              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide border border-slate-200">{item.duration}</span>
+
+              <div class="absolute bottom-0 left-0 w-full p-6 text-white">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-6 h-6 bg-secondary-fixed rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-sm">{item.category === 'ortognatica' ? 'orthodontic_treatment' : item.category === 'implantes' ? 'dental_ Implant' : 'medical_services'}</span>
+                  </div>
+                  <span class="text-xs font-bold text-secondary uppercase tracking-wider">{item.category}</span>
+                </div>
+                <h3 class="font-h3 text-h3 text-white mb-1">{item.label}</h3>
+                <p class="text-slate-200 text-sm">{item.subtitle}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .filter-btn {
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .filter-btn.active {
+      background-color: var(--md-sys-color-secondary-fixed);
+      color: var(--md-sys-color-on-secondary-fixed);
+    }
+    .filter-btn:not(.active):hover {
+      background-color: var(--md-sys-color-surface-container-high);
+    }
+  </style>
+
+  <script>
+    const btns = document.querySelectorAll<HTMLElement>('.filter-btn');
+    const cards = document.querySelectorAll<HTMLElement>('.card-wrapper');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const category = btn.innerText.toLowerCase().replace(' ', '');
+        
+        cards.forEach(card => {
+          if (category === 'todos' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+</Layout>
