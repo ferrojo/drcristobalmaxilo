@@ -45,7 +45,7 @@ const navLinks = [
     <!-- TopNavBar -->
     <nav
       id="nav-header"
-      class="fixed top-0 w-full z-50 bg-navy backdrop-blur-md border-b border-teal/20 h-16 md:h-24 transition-all duration-300 ease-in-out shadow-sm"
+      class="fixed top-0 w-full z-50 bg-navy backdrop-blur-md border-b border-teal/20 h-20 md:h-24 transition-all duration-300 ease-in-out shadow-sm"
     >
       <div
         class="max-w-container mx-auto px-6 h-full flex items-center justify-between"
@@ -55,11 +55,11 @@ const navLinks = [
             id="nav-logo"
             src="/maxilo-logo.jpg"
             alt="Dr. Cristóbal Patiño Rojo Logo"
-            class="h-10 w-auto md:h-20 md:w-35 rounded-full object-cover ring-2 ring-teal/40 group-hover:ring-teal transition-all duration-300"
+            class="h-14 w-auto md:h-20 md:w-35 rounded-full object-cover ring-2 ring-teal/40 group-hover:ring-teal transition-all duration-300"
           />
           <span
             id="nav-title"
-            class="text-sm md:text-lg font-bold tracking-tight text-white uppercase font-doctor antialiased leading-tight transition-all duration-300"
+            class="text-md md:text-md font-bold tracking-tight text-white uppercase font-doctor antialiased leading-tight transition-all duration-300"
           >
             Dr. Cristóbal Patiño
           </span>
@@ -94,11 +94,11 @@ const navLinks = [
         <!-- Mobile menu button -->
         <button
           id="mobile-menu-btn"
-          class="md:hidden p-2 text-slate-200 hover:text-white transition-colors"
+          class="md:hidden p-3 text-slate-200 hover:text-white transition-colors"
           aria-label="Menú"
         >
           <svg
-            class="w-6 h-6"
+            class="w-8 h-8"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -260,8 +260,8 @@ const navLinks = [
         const mobile = isMobile();
 
         if (nav) {
-          // Mobile: 64px → 48px | Desktop: 96px → 64px
-          nav.style.height = scrolled ? (mobile ? "48px" : "64px") : "";
+          // Mobile: 80px → 56px | Desktop: 96px → 64px
+          nav.style.height = scrolled ? (mobile ? "56px" : "64px") : "";
           nav.classList.toggle("shadow-lg", scrolled);
           nav.classList.toggle("shadow-sm", !scrolled);
         }
