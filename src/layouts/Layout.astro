@@ -121,7 +121,7 @@ const navLinks = [
           navLinks.map((link) => (
             <a
               href={link.href}
-              class="block text-slate-200 font-medium hover:text-white transition-colors"
+              class="block text-slate-200 font-medium hover:text-white transition-colors text-center text-md"
             >
               {link.label}
             </a>
@@ -129,7 +129,7 @@ const navLinks = [
         }
         <a
           href="/agendar"
-          class="block bg-primary text-white px-6 py-3 rounded-xl text-center font-cta text-sm"
+          class="block bg-primary text-white px-6 py-3 rounded-xl text-center font-cta text-md"
         >
           Agendar Cita
         </a>
@@ -261,7 +261,7 @@ const navLinks = [
 
         if (nav) {
           // Mobile: 80px → 56px | Desktop: 96px → 64px
-          nav.style.height = scrolled ? (mobile ? "56px" : "64px") : "";
+          nav.style.height = scrolled ? (mobile ? "70px" : "64px") : "";
           nav.classList.toggle("shadow-lg", scrolled);
           nav.classList.toggle("shadow-sm", !scrolled);
         }
@@ -274,7 +274,7 @@ const navLinks = [
 
         if (title) {
           // Texto reducido al scrollear
-          title.style.fontSize = scrolled ? (mobile ? "11px" : "16px") : "";
+          title.style.fontSize = scrolled ? (mobile ? "16px" : "16px") : "";
         }
       }
 
