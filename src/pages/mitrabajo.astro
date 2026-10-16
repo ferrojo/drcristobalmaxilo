@@ -27,19 +27,19 @@ import Layout from "../layouts/Layout.astro";
       <!-- Gallery Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { category: 'ortognatica', label: 'Transformación Facial', subtitle: 'Antes y Después', img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80', duration: '6 Meses' },
+          { category: 'ortognatica', label: 'Transformación Facial', subtitle: 'Antes y Después', img: 'https://images.unsplash.com/photo-1551601651-09492b5468b6?w=600&q=80', duration: '6 Meses' },
           {
             category: 'implantes',
             label: 'Rehabilitación Completa',
             subtitle: 'Caso Clínico',
-            img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&q=80',
+            img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80',
             duration: '4 Meses',
             isLong: true
           },
-          { category: 'traumatologia', label: 'Reconstrucción Facial', subtitle: 'Trauma Mandibular', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80', duration: '3 Semanas' },
-          { category: 'patologia', label: 'Extracción Dental', subtitle: 'Cordales Incluídos', img: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80', duration: '1 Hora' },
-          { category: 'implantes', label: 'Reemplazo de Molares', subtitle: 'Restauración Posterior', img: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=600&q=80', duration: '2 Sesiones' },
-          { category: 'ortognatica', label: 'Mejora Funcional', subtitle: 'Perfil Facial', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80', duration: '2 Horas' },
+          { category: 'traumatologia', label: 'Reconstrucción Facial', subtitle: 'Trauma Mandibular', img: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80', duration: '3 Semanas' },
+          { category: 'patologia', label: 'Extracción Dental', subtitle: 'Cordales Incluídos', img: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80', duration: '1 Hora' },
+          { category: 'implantes', label: 'Reemplazo de Molares', subtitle: 'Restauración Posterior', img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80', duration: '2 Sesiones' },
+          { category: 'ortognatica', label: 'Mejora Funcional', subtitle: 'Perfil Facial', img: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80', duration: '2 Horas' },
         ].map((item, index) => (
           <div class={`card-wrapper ${item.isLong ? 'md:col-span-2' : ''}`} data-category={item.category}>
             <div class="group relative rounded-xl overflow-hidden cursor-pointer shadow-lg">
@@ -52,7 +52,7 @@ import Layout from "../layouts/Layout.astro";
               <div class="absolute bottom-0 left-0 w-full p-6 text-white">
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-6 h-6 bg-secondary-fixed rounded flex items-center justify-center">
-                    <span class="material-symbols-outlined text-primary text-sm">{item.category === 'ortognatica' ? 'orthodontic_treatment' : item.category === 'implantes' ? 'dental_ Implant' : 'medical_services'}</span>
+                    <span class="material-symbols-outlined text-primary text-sm">{item.category === 'ortognatica' ? 'orthodontic_treatment' : item.category === 'implantes' ? 'dental_implant' : 'medical_services'}</span>
                   </div>
                   <span class="text-xs font-bold text-secondary uppercase tracking-wider">{item.category}</span>
                 </div>

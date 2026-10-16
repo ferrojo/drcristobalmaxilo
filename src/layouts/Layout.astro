@@ -33,7 +33,7 @@ const navLinks = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -45,36 +45,36 @@ const navLinks = [
     <!-- TopNavBar -->
     <nav
       id="nav-header"
-      class="fixed top-0 w-full z-50 bg-navy backdrop-blur-md border-b border-teal/20 h-20 md:h-24 transition-all duration-300 ease-in-out shadow-sm"
+      class="fixed top-0 w-full z-50 bg-navy/95 backdrop-blur-sm border-b border-teal/20 h-20 md:h-24 transition-all duration-300 ease-in-out"
     >
       <div
         class="max-w-container mx-auto px-6 h-full flex items-center justify-between"
       >
-        <a href="/" class="flex items-center gap-2 md:gap-3 group">
+        <a href="/" class="flex items-center gap-3 group">
           <img
             id="nav-logo"
-            src="/maxilo-logo.jpg"
+            src="/maxilo-logo.webp"
             alt="Dr. Cristóbal Patiño Rojo Logo"
             class="h-14 w-auto md:h-20 md:w-35 rounded-full object-cover ring-2 ring-teal/40 group-hover:ring-teal transition-all duration-300"
           />
           <span
             id="nav-title"
-            class="text-md md:text-xl font-bold tracking-tight text-white uppercase font-doctor antialiased leading-tight transition-all duration-300"
+            class="text-lg md:text-xl font-semibold text-white font-doctor antialiased leading-tight transition-all duration-300"
           >
             Dr. Cristóbal Patiño
           </span>
         </a>
 
         <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-10">
           {
             navLinks.map((link) => (
               <a
                 href={link.href}
-                class={`font-medium transition-colors text-lg ${
+                class={`font-medium transition-colors text-base ${
                   currentPage === link.href
-                    ? "text-white border-b-2 border-white pb-0.5"
-                    : "text-slate-200 hover:text-white"
+                    ? "text-white"
+                    : "text-slate-300 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -86,7 +86,7 @@ const navLinks = [
         <!-- CTA Button (desktop only) -->
         <a
           href="/agendar"
-          class="hidden md:inline-block bg-on-primary text-black px-6 py-3 rounded-xl font-normal text-cta hover:bg-primary hover:text-white transition-all duration-300 active:scale-95 border-2 border-primary"
+          class="hidden md:inline-block bg-on-primary text-black px-6 py-3 rounded-lg font-medium text-cta hover:bg-primary hover:text-white transition-all duration-300 border border-primary"
         >
           Agendar Cita
         </a>
@@ -143,37 +143,33 @@ const navLinks = [
 
     <!-- Footer -->
     <footer
-      class="w-full border-t border-slate-200 bg-slate-50 pt-12 pb-8 mt-20"
+      class="w-full border-t border-outline-variant/30 bg-surface-container-low pt-16 pb-8 mt-20"
     >
       <div
-        class="max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8"
+        class="max-w-container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12"
       >
         <!-- Brand -->
-        <div class="space-y-3">
-          <div class="text-lg font-bold text-primary font-h1">MaxiloSalud</div>
-          <p class="text-sm text-slate-500 leading-relaxed">
+        <div class="space-y-4">
+          <div class="text-2xl font-semibold text-primary font-h1">MaxiloSalud</div>
+          <p class="text-sm text-on-surface-variant leading-relaxed max-w-xs">
             Especialistas en Cirugía Bucal y Maxilofacial. Tecnología de
             vanguardia para tu bienestar.
           </p>
-          <div class="flex items-center gap-3 text-sm text-slate-500">
+          <div class="flex items-center gap-2 text-sm text-on-surface-variant">
             <span class="material-symbols-outlined text-base">schedule</span>
-            Lun–Vie 9:00–20:00 | Sáb 9:00–14:00
+            <span>Lun–Vie 9:00–20:00 | Sáb 9:00–14:00</span>
           </div>
         </div>
 
         <!-- Quick links -->
-        <div class="space-y-3">
-          <p
-            class="text-xs font-semibold text-slate-400 uppercase tracking-widest"
-          >
-            Sitio
-          </p>
-          <div class="space-y-2">
+        <div class="space-y-4">
+          <p class="text-sm font-medium text-on-surface-variant">Sitio</p>
+          <div class="space-y-3">
             {
               navLinks.map((link) => (
                 <a
                   href={link.href}
-                  class="block text-sm text-slate-500 hover:text-primary transition-colors"
+                  class="block text-sm text-on-surface-variant hover:text-primary transition-colors"
                 >
                   {link.label}
                 </a>
@@ -183,26 +179,22 @@ const navLinks = [
         </div>
 
         <!-- Legal -->
-        <div class="space-y-3">
-          <p
-            class="text-xs font-semibold text-slate-400 uppercase tracking-widest"
-          >
-            Legal
-          </p>
-          <div class="space-y-2">
+        <div class="space-y-4">
+          <p class="text-sm font-medium text-on-surface-variant">Legal</p>
+          <div class="space-y-3">
             <a
               href="/privacidad"
-              class="block text-sm text-slate-500 hover:text-primary transition-colors"
+              class="block text-sm text-on-surface-variant hover:text-primary transition-colors"
               >Aviso de Privacidad</a
             >
             <a
               href="/terminos"
-              class="block text-sm text-slate-500 hover:text-primary transition-colors"
+              class="block text-sm text-on-surface-variant hover:text-primary transition-colors"
               >Términos de Servicio</a
             >
             <a
               href="/faq"
-              class="block text-sm text-slate-500 hover:text-primary transition-colors"
+              class="block text-sm text-on-surface-variant hover:text-primary transition-colors"
               >Preguntas Frecuentes</a
             >
           </div>
@@ -210,13 +202,13 @@ const navLinks = [
       </div>
 
       <div
-        class="max-w-container mx-auto px-6 mt-10 pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4"
+        class="max-w-container mx-auto px-6 mt-12 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4"
       >
-        <p class="text-xs text-slate-400">
+        <p class="text-xs text-on-surface-variant">
           © 2026 Cirujano Maxilofacial | Cristóbal Patiño Rojo. Todos los
-          derechos reservados.Sitio desarrollado por Fernando Patiño
+          derechos reservados. Sitio desarrollado por Fernando Patiño
         </p>
-        <div class="flex items-center gap-4 text-slate-400">
+        <div class="flex items-center gap-6 text-on-surface-variant">
           <a
             href="tel:+523312345678"
             class="hover:text-primary transition-colors"

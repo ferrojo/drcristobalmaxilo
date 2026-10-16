@@ -5,22 +5,22 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Inicio" currentPage="/">
   <!-- Hero Section -->
   <section
-    class="pt-32 pb-20 px-6 bg-gradient-to-br from-surface to-surface-container-low overflow-hidden"
+    class="pt-32 pb-24 px-6 bg-surface overflow-hidden"
   >
     <div
-      class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+      class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
     >
       <!-- Text Side -->
       <div class="space-y-8">
         <div class="space-y-2">
           <span
-            class="inline-block font-label-caps text-sm font-bold text-primary uppercase tracking-widest bg-primary-fixed px-0 py-5 rounded-full"
+            class="inline-block font-label-caps text-sm font-medium text-primary"
           >
             Líderes en Cirugía Maxilofacial
           </span>
         </div>
         <h1 class="font-h1 text-h1 text-primary leading-tight">
-          Cirugía Maxilofacial de Excelencia: <span class="text-black"
+          Cirugía Maxilofacial de Excelencia: <span class="text-on-surface"
             >Salud y Estética Funcional</span
           >
         </h1>
@@ -32,7 +32,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="flex flex-col sm:flex-row gap-4">
           <a
             href="/agendar"
-            class="whatsapp-green whatsapp-hover text-black px-4 py-5 rounded-xl font-cta text-lg flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg font-bold hover:text-white"
+            class="whatsapp-green whatsapp-hover text-black px-6 py-4 rounded-lg font-cta text-lg flex items-center justify-center gap-2 transition-all font-semibold hover:text-white"
           >
             <span
               class="material-symbols-outlined"
@@ -42,7 +42,7 @@ import Layout from "../layouts/Layout.astro";
           </a>
           <a
             href="/servicios"
-            class="border-2 border-primary text-primary px-4 py-5 rounded-xl font-cta text-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all font-bold"
+            class="border-2 border-primary text-primary px-6 py-4 rounded-lg font-cta text-lg flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all font-semibold"
           >
             Nuestros Servicios
           </a>
@@ -51,20 +51,20 @@ import Layout from "../layouts/Layout.astro";
 
       <!-- Image Side -->
       <div class="relative">
-        <div class="rounded-2xl overflow-hidden shadow-2xl">
+        <div class="rounded-xl overflow-hidden">
           <img
-            src="/maxilofacial-cristobal-patino-rojo.jpg"
+            src="/maxilofacial-cristobal-patino-rojo.webp"
             alt="Dr. Cristóbal Patiño Rojo - Cirujano Maxilofacial"
             class="w-full h-[460px] object-cover object-top"
           />
         </div>
         <!-- Badge flotante -->
         <div
-          class="absolute bottom-6 left-6 bg-white rounded-xl shadow-lg px-5 py-3 flex items-center gap-3"
+          class="absolute bottom-6 left-6 bg-white rounded-lg px-5 py-3 flex items-center gap-3 border border-outline-variant/20"
         >
           <span class="material-symbols-outlined text-primary">verified</span>
           <div>
-            <p class="text-xs font-semibold text-primary">
+            <p class="text-sm font-medium text-primary">
               Certificación Oficial
             </p>
             <p class="text-xs text-on-surface-variant">
@@ -77,8 +77,8 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- Feature Cards -->
-  <section class="py-20 px-6 bg-white">
-    <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       {
         [
           {
@@ -97,14 +97,14 @@ import Layout from "../layouts/Layout.astro";
             desc: "Años de trayectoria en cirugías complejas avalan nuestra precisión técnica y resultados clínicos excepcionales.",
           },
         ].map((card) => (
-          <div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/30 hover:shadow-[0px_4px_20px_rgba(26,82,118,0.08)] transition-shadow group">
-            <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center group-hover:border-2 border-primary justify-center mb-5 group-hover:bg-primary-fixed transition-colors">
-              <span class="material-symbols-outlined text-white transition-colors">
+          <div class="p-8 bg-surface-container-low rounded-lg border border-outline-variant/20 hover:border-primary/40 transition-colors group">
+            <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-white">
                 {card.icon}
               </span>
             </div>
             <h3 class="font-h3 text-h3 text-primary mb-3">{card.title}</h3>
-            <p class=" text-on-surface-variant leading-relaxed">
+            <p class="text-on-surface-variant leading-relaxed">
               {card.desc}
             </p>
           </div>
@@ -117,10 +117,7 @@ import Layout from "../layouts/Layout.astro";
   <section class="py-20 px-6 bg-surface-container-low">
     <div class="max-w-container mx-auto space-y-12">
       <div class="text-center space-y-3">
-        <span
-          class="font-label-caps text-label-caps text-secondary uppercase tracking-widest"
-          >Servicios Especializados</span
-        >
+        <span class="font-label-caps text-label-caps text-secondary">Servicios Especializados</span>
         <h2 class="font-h2 text-h2 text-primary">
           Tratamientos Quirúrgicos Avanzados
         </h2>
@@ -129,12 +126,12 @@ import Layout from "../layouts/Layout.astro";
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Big card -->
         <div
-          class="relative rounded-2xl overflow-hidden h-full group cursor-pointer"
+          class="relative rounded-2xl overflow-hidden h-full min-h-[400px] group cursor-pointer"
         >
           <img
             src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80"
             alt="Implantes Dentales"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 absolute inset-0"
           />
           <div
             class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"
@@ -190,12 +187,369 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
+  <!-- Proceso del Paciente - Timeline Horizontal -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-container mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary">Nuestro Proceso</span>
+        <h2 class="font-h2 text-h2 text-primary">
+          Tu Paso a Paso Hacia la Recuperación
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Un proceso claro y transparente desde la primera consulta hasta tu recuperación completa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {
+          [
+            {
+              step: "01",
+              icon: "calendar_month",
+              title: "Consulta Inicial",
+              desc: "Evaluación completa de tu caso con historia clínica y examen físico.",
+              img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80",
+            },
+            {
+              step: "02",
+              icon: "radiology",
+              title: "Diagnóstico 3D",
+              desc: "Tomografía y radiografía digital para un diagnóstico preciso.",
+              img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80",
+            },
+            {
+              step: "03",
+              icon: "surgical",
+              title: "Cirugía",
+              desc: "Procedimiento quirúrgico con tecnología de mínima invasión.",
+              img: "https://images.unsplash.com/photo-1551601651-09492b5468b6?w=400&q=80",
+            },
+            {
+              step: "04",
+              icon: "healing",
+              title: "Recuperación",
+              desc: "Seguimiento postoperatorio y rehabilitación personalizada.",
+              img: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=400&q=80",
+            },
+          ].map((item) => (
+            <div class="group rounded-lg overflow-hidden border border-outline-variant/20 bg-white h-full flex flex-col">
+              <div class="relative h-40 overflow-hidden flex-shrink-0">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-2xl font-semibold text-primary/20">{item.step}</span>
+                  <span class="material-symbols-outlined text-primary">{item.icon}</span>
+                </div>
+                <h3 class="font-h3 text-h3 text-primary mb-2">{item.title}</h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas - Contador Animado -->
+  <section class="py-20 px-6 bg-gradient-to-r from-primary to-primary-container">
+    <div class="max-w-container mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {
+          [
+            { number: "15+", label: "Años de Experiencia", icon: "workspace_premium" },
+            { number: "2,500+", label: "Cirugías Realizadas", icon: "surgical" },
+            { number: "98%", label: "Satisfacción del Paciente", icon: "sentiment_very_satisfied" },
+            { number: "24/7", label: "Atención de Urgencias", icon: "emergency" },
+          ].map((stat) => (
+            <div class="space-y-3">
+              <span class="material-symbols-outlined text-white/80 text-4xl">{stat.icon}</span>
+              <p class="text-4xl md:text-5xl font-bold text-white">{stat.number}</p>
+              <p class="text-white/80 text-sm font-medium uppercase tracking-wider">{stat.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnología y Equipamiento -->
+  <section class="py-20 px-6 bg-surface-container-low">
+    <div class="max-w-container mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary">Infraestructura</span>
+        <h2 class="font-h2 text-h2 text-primary">
+          Tecnología de Punta en Cirugía Maxilofacial
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Contamos con el equipamiento más avanzado para garantizar precisión y seguridad en cada procedimiento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          [
+            {
+              icon: "radiology",
+              title: "Tomografía Cone Beam 3D",
+              desc: "Imágenes tridimensionales de alta resolución para planificación quirúrgica precisa.",
+              img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80",
+            },
+            {
+              icon: "precision_manufacturing",
+              title: "Quirófano Inteligente",
+              desc: "Sala de operaciones con sistemas de navegación y monitoreo en tiempo real.",
+              img: "https://images.unsplash.com/photo-1551601651-09492b5468b6?w=600&q=80",
+            },
+            {
+              icon: "biotech",
+              title: "Laboratorio Digital",
+              desc: "Diseño y fabricación de guías quirúrgicas personalizadas con impresión 3D.",
+              img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+            },
+            {
+              icon: "monitor_heart",
+              title: "Monitoreo Avanzado",
+              desc: "Equipos de anestesia y monitoreo de última generación para máxima seguridad.",
+              img: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80",
+            },
+            {
+              icon: "science",
+              title: "Microscopio Quirúrgico",
+              desc: "Visualización aumentada para procedimientos de alta precisión.",
+              img: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80",
+            },
+            {
+              icon: "vaccines",
+              title: "Esterilización Automatizada",
+              desc: "Sistemas de esterilización que garantizan ambientes 100% seguros.",
+              img: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80",
+            },
+          ].map((tech) => (
+            <div class="group rounded-lg overflow-hidden border border-outline-variant/20 bg-white h-full flex flex-col">
+              <div class="relative h-44 overflow-hidden flex-shrink-0">
+                <img
+                  src={tech.img}
+                  alt={tech.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+                <div class="absolute bottom-4 left-4">
+                  <span class="material-symbols-outlined text-white text-2xl">{tech.icon}</span>
+                </div>
+              </div>
+              <div class="p-6 flex-grow flex flex-col">
+                <h3 class="font-h3 text-h3 text-primary mb-2">{tech.title}</h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">{tech.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios / Casos Reales -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-container mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary">Casos de Éxito</span>
+        <h2 class="font-h2 text-h2 text-primary">
+          Historias que Inspiran Confianza
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Resultados reales de pacientes que transformaron su vida con nuestros tratamientos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          [
+            {
+              name: "María G.",
+              age: "28 años",
+              procedure: "Cirugía Ortognática",
+              quote: "Después de años de inseguridad, finalmente tengo la sonrisa que siempre soñé. El equipo fue increíble en cada paso.",
+              img: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&q=80",
+              rating: 5,
+            },
+            {
+              name: "Carlos R.",
+              age: "45 años",
+              procedure: "Implantes Dentales",
+              quote: "Recuperé la función completa de mi mordida. El proceso fue mucho más rápido de lo que esperaba.",
+              img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80",
+              rating: 5,
+            },
+            {
+              name: "Ana L.",
+              age: "35 años",
+              procedure: "Patología Bucal",
+              quote: "Detectaron un problema a tiempo y lo resolvieron sin complicaciones. Profesionalismo total.",
+              img: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=400&q=80",
+              rating: 5,
+            },
+          ].map((testimonial) => (
+            <div class="p-8 bg-surface-container-low rounded-lg border border-outline-variant/20 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-4">
+                {
+                  Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <span class="material-symbols-outlined text-yellow-500 text-lg">star</span>
+                  ))
+                }
+              </div>
+              <p class="text-on-surface-variant leading-relaxed mb-6 italic flex-grow">
+                "{testimonial.quote}"
+              </p>
+              <div class="flex items-center gap-4 mt-auto">
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.name}
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="font-semibold text-primary">{testimonial.name}</p>
+                  <p class="text-xs text-on-surface-variant">{testimonial.procedure} • {testimonial.age}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Educación / Blog -->
+  <section class="py-20 px-6 bg-surface-container-low">
+    <div class="max-w-container mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary">Educación</span>
+        <h2 class="font-h2 text-h2 text-primary">
+          Información para tu Salud Bucal
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Artículos y consejos sobre cirugía maxilofacial, salud bucal y bienestar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          [
+            {
+              category: "Implantes",
+              title: "¿Cuánto tiempo duran los implantes dentales?",
+              desc: "Todo lo que necesitas saber sobre el cuidado y la longevidad de tus implantes.",
+              img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80",
+              readTime: "5 min",
+            },
+            {
+              category: "Ortognática",
+              title: "Señales de que necesitas cirugía ortognática",
+              desc: "Identifica los síntomas comunes y cuándo es momento de consultar a un especialista.",
+              img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80",
+              readTime: "7 min",
+            },
+            {
+              category: "Patología",
+              title: "La importancia de la revisión oral anual",
+              desc: "Por qué la detección temprana puede salvar tu vida y cómo prepararte.",
+              img: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80",
+              readTime: "4 min",
+            },
+          ].map((article) => (
+            <article class="group rounded-lg overflow-hidden border border-outline-variant/20 bg-white h-full flex flex-col cursor-pointer">
+              <div class="relative h-44 overflow-hidden flex-shrink-0">
+                <img
+                  src={article.img}
+                  alt={article.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span class="absolute top-4 left-4 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full">
+                  {article.category}
+                </span>
+              </div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-3">
+                  <span class="material-symbols-outlined text-sm">schedule</span>
+                  <span>{article.readTime} de lectura</span>
+                </div>
+                <h3 class="font-h3 text-h3 text-primary mb-2 group-hover:text-secondary transition-colors">
+                  {article.title}
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">{article.desc}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes (FAQ) -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-3xl mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary">FAQ</span>
+        <h2 class="font-h2 text-h2 text-primary">
+          Preguntas Frecuentes
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Resolvemos tus dudas más comunes sobre nuestros procedimientos.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {
+          [
+            {
+              question: "¿Duele la cirugía maxilofacial?",
+              answer: "No. Todos nuestros procedimientos se realizan bajo anestesia general o sedación consciente, por lo que no sentirás dolor durante la cirugía. Postoperatorio, recibirás medicamento para controlar cualquier molestia.",
+            },
+            {
+              question: "¿Cuánto tiempo dura la recuperación?",
+              answer: "Depende del tipo de procedimiento. Los implantes dentales requieren 3-6 meses de osteointegración, mientras que la cirugía ortognática tiene una recuperación inicial de 2-3 semanas. Te daremos un plan detallado para tu caso específico.",
+            },
+            {
+              question: "¿Los implantes dentales son permanentes?",
+              answer: "Con el cuidado adecuado, los implantes dentales pueden durar toda la vida. Es importante mantener una buena higiene oral y asistir a tus revisiones periódicas.",
+            },
+            {
+              question: "¿Necesito hospitalización para la cirugía?",
+              answer: "La mayoría de nuestros procedimientos se realizan de forma ambulatoria. Solo algunos casos complejos de cirugía ortognática requieren una noche de hospitalización.",
+            },
+            {
+              question: "¿Qué cuidados debo tener después de la cirugía?",
+              answer: "Te proporcionaremos instrucciones detalladas que incluyen: dieta blanda, aplicación de hielo, medicación, reposo y signos de alarma a vigilar. Además, tendrás seguimiento cercano con nuestro equipo.",
+            },
+          ].map((faq, index) => (
+            <div class="border border-outline-variant/30 rounded-xl overflow-hidden">
+              <button
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors"
+                data-faq={index}
+              >
+                <span class="font-semibold text-primary pr-4">{faq.question}</span>
+                <span class="material-symbols-outlined text-primary transition-transform duration-300">
+                  expand_more
+                </span>
+              </button>
+              <div class="faq-content hidden px-6 pb-6">
+                <p class="text-on-surface-variant leading-relaxed">{faq.answer}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Trust / Aseguradoras -->
   <section class="py-16 px-6 bg-white border-y border-outline-variant/30">
     <div class="max-w-container mx-auto text-center space-y-8">
-      <p
-        class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest"
-      >
+      <p class="font-label-caps text-label-caps text-on-surface-variant">
         Convenios con las Principales Aseguradoras
       </p>
       <div class="flex flex-wrap justify-center items-center gap-10 opacity-50">
@@ -209,4 +563,104 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </section>
+
+  <!-- Ubicación y Contacto -->
+  <section class="py-20 px-6 bg-surface-container-low">
+    <div class="max-w-container mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="font-label-caps text-label-caps text-secondary">Contacto</span>
+        <h2 class="font-h2 text-h2 text-primary">
+          Visítanos en Nuestra Clínica
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Mapa -->
+        <div class="rounded-xl overflow-hidden shadow-lg h-[400px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.1839!2d-103.3724!3d20.6767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1e3a3c3e3e3%3A0x3e3e3e3e3e3e3e3e!2sGuadalajara%2C%20Jalisco!5e0!3m2!1ses!2smx!4v1699999999999!5m2!1ses!2smx"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de la clínica"
+          ></iframe>
+        </div>
+
+        <!-- Info de Contacto -->
+        <div class="space-y-8">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-white">location_on</span>
+            </div>
+            <div>
+              <h3 class="font-h3 text-h3 text-primary mb-1">Dirección</h3>
+              <p class="text-on-surface-variant">Av. Vallarta 1234, Col. Americana</p>
+              <p class="text-on-surface-variant">Guadalajara, Jalisco, México</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-white">schedule</span>
+            </div>
+            <div>
+              <h3 class="font-h3 text-h3 text-primary mb-1">Horarios</h3>
+              <p class="text-on-surface-variant">Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+              <p class="text-on-surface-variant">Sábados: 9:00 AM - 2:00 PM</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-white">phone</span>
+            </div>
+            <div>
+              <h3 class="font-h3 text-h3 text-primary mb-1">Teléfono</h3>
+              <p class="text-on-surface-variant">+52 (33) 1234-5678</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-white">chat</span>
+            </div>
+            <div>
+              <h3 class="font-h3 text-h3 text-primary mb-1">WhatsApp</h3>
+              <p class="text-on-surface-variant">+52 (33) 9876-5432</p>
+            </div>
+          </div>
+
+          <a
+            href="/agendar"
+            class="whatsapp-green whatsapp-hover text-black px-6 py-4 rounded-xl font-cta text-lg flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg font-bold hover:text-white"
+          >
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+            Agendar Cita por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  // FAQ Accordion
+  const faqToggles = document.querySelectorAll<HTMLElement>('.faq-toggle');
+  faqToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const content = toggle.nextElementSibling as HTMLElement;
+      const icon = toggle.querySelector('.material-symbols-outlined');
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon!.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon!.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+</script>
